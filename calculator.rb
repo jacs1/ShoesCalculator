@@ -18,10 +18,14 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
       puts "."
       end
       
+
       button "=" do
         eval_expression
       end
     end
+    button "sqrt" do
+        square_root
+      end
     
   end
   
@@ -44,6 +48,11 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
   #
   def eval_expression
     @input = eval(@input).to_s
+    @output.text = @input
+  end
+
+  def square_root
+    @input = Math.sqrt(@input.to_i).to_s
     @output.text = @input
   end
   

@@ -1,15 +1,21 @@
 Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
-  stack :margin => 40 do
+  stack :margin => 30 do
     @output = edit_line
-    
+   
+
     flow do
       %w(+ 1 2 3 - 4 5 6 / 7 8 9 *).each do |op|  
         button op do
           append op
         end
       end
-    
 
+     button "C" do
+    end
+
+     button "." do
+      end
+      
       button "=" do
         eval_expression
       end
@@ -35,4 +41,6 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
     @output.text = @input
   end
   
+  background blue do
+  end
 end

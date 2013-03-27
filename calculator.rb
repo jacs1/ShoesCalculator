@@ -11,9 +11,11 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
       end
 
      button "C" do
+      clear_entry 
     end
 
      button "." do
+      puts "."
       end
       
       button "=" do
@@ -25,6 +27,10 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
   
   # Stick a string on the end of our input
   #
+  def clear_entry()
+    @input = ""
+    @output.text = ""
+  end
   def append(s)
     debug s
     if @input.nil?

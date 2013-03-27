@@ -4,10 +4,14 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
    
 
     flow do
-      %w(+ 1 2 3 - 4 5 6 / 7 8 9 *).each do |op|  
+      %w(7 8 9 + 4 5 6 - 7 8 9 *).each do |op|  
         button op do
           append op
         end
+      end
+
+      button "s" do
+        square_root
       end
 
      button "C" do
@@ -15,7 +19,7 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
     end
 
      button "." do
-      puts "."
+      append "."
       end
       
 
@@ -23,9 +27,7 @@ Shoes.app :title => "My Amazing Calculator", :width => 250, :height => 250 do
         eval_expression
       end
     end
-    button "sqrt" do
-        square_root
-      end
+    
     
   end
   
